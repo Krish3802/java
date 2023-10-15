@@ -1,0 +1,1385 @@
+////////count the number of even and oddd digits in a number
+
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    System.out.println("enter a number :");
+	    String n = sc.nextLine();
+	    
+	    int num = Integer.parseInt(n);
+	    int even_num = 0;
+	    int odd_num = 0;
+	    
+	    while(num>0)
+	    {
+	        int k=num%10;
+	        if(k%2==0)
+	        {
+	            even_num+=1;
+	            
+	        }
+	        else
+	        {
+	            odd_num+=1;
+	            
+	        }
+	        num=num/10;
+	    }
+	    System.out.println("no. of even digits is :"+even_num);
+	    System.out.println("no. of odd digits is :"+odd_num);
+	}
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+2. 09/08/23
+// convert digits of a number to words ( add method done in class)
+import java.util.Scanner;
+public class Main
+{
+public static void main(String[] args) {
+Scanner sc =new Scanner(System.in);
+System.out.println("the no. of digits");
+int size =sc.nextInt();
+int num[]=new int[size];
+for(int i=0;i<size;i++)
+{
+System.out.println("enter digits one by one");
+num[i]=sc.nextInt();
+}
+String inwords="";
+for(int j:num)
+{
+switch(j)
+{
+case 0:
+inwords=inwords+"zero ";
+break;
+case 1:
+inwords=inwords+"one ";
+break;
+case 2:
+inwords=inwords+"two ";
+break;
+case 3:
+inwords=inwords+"three ";
+break;
+case 4:
+inwords=inwords+"four ";
+break;
+case 5:
+inwords=inwords+"five ";
+break;
+case 6:
+inwords=inwords+"six ";
+break;
+case 7:
+inwords=inwords+"seven ";
+break;
+case 8:
+inwords=inwords+"eight ";
+break;
+case 9:
+inwords=inwords+"nine ";
+break;
+}
+}
+System.out.println(inwords);
+}
+}
+3. // electricity bill
+import java.util.Scanner;
+public class Main
+{
+public static void main(String[] args) {
+Scanner sc =new Scanner(System.in);
+System.out.println("enter consumer's name");
+String name=sc.nextLine();
+System.out.println("enter the no. of units consumed");
+int cons =sc.nextInt();
+double rate=0;
+if (cons > 0 && cons <=100)
+{
+rate = cons*0.6;
+}
+else if (cons > 100 && cons <= 300)
+{
+rate=100*0.6+(cons-100)*0.8;
+}
+else if (cons > 300)
+{
+rate=100*0.6+200*0.8+(cons-300)*0.9;
+}
+if (rate > 300)
+{
+rate=rate+rate*0.15;
+}
+rate+=0.5;
+System.out.println(name+"'s "+"bill is Rs."+rate);
+}
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+//////// PRINT PRIME FACTORS OF NUMBER.
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    System.out.println("enter a number");
+	    int num = sc.nextInt();
+	    int k=2;
+	    
+	    while(num>1)
+	    {
+	        if(num%k!=0)
+	        {
+	            k++;
+	            continue;
+	        }
+	        System.out.println(k+" ");
+	        num=num/k;
+	    }
+	    
+
+	}
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+//////// PRIME NUMBERS WITHIN A RANGE
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    
+	    System.out.println("enter the lower limit");
+	    int lower = sc.nextInt();
+	    sc.nextLine();
+	    
+	    System.out.println("enter the lower limit");
+	    int upper = sc.nextInt();
+	    sc.nextLine();
+	    
+	    for(int i=lower;i<=upper;i++)
+	    {
+	        int prime=1;
+	        
+	        for(int j=2;j<=i-1;j++)
+	        {
+	            if(i%j==0)
+	            {
+	                prime=0;
+	                break;
+	            }
+	        }
+	            if(prime==1)
+	            {
+	                System.out.println(i+" ");
+	            }
+	            
+	        }
+	    }
+
+}
+
+
+
+
+6. // pattern 1
+1
+12
+123
+1234
+
+
+import java.util.Scanner;
+public class Main
+{
+public static void main(String[] args) {
+for(int i=1;i<=4;i++) // outer loop,nested for loop
+{
+for(int j=1;j<=i;j++) // inner loop
+{
+System.out.print(j);
+}
+System.out.println();
+}
+}
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------
+7. // pattern 2
+1
+2 3
+4 5 6
+7 8 9 10
+
+Import java.util.Scanner;
+public class Main
+{
+public static void main(String[] args) {
+int k=1;
+for(int i=1;i<=4;i++) // outer loop,nested for loop
+{
+for(int j=1;j<=i;j++) // inner loop
+{
+System.out.print(k+" ");
+k++;
+}
+System.out.println();
+}
+}
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+8. // pattern 3
+5 5 5 5 5
+4 4 4 4
+3 3 3
+2 2
+1
+
+
+import java.util.Scanner;
+public class Main
+{
+public static void main(String[] args) {
+for(int i=5;i>=1;i--) // outer loop
+{
+for(int j=1;j<=i;j++) // inner loop
+{
+System.out.print(i+" ");
+}
+System.out.println();
+}
+}
+}
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+9. // pattern 4
+
+5 5 5 5 5
+ 4 4 4 4
+  3 3 3
+   2 2
+    1
+
+import java.util.Scanner;
+public class Main
+{
+public static void main(String[] args) {
+for(int i=5;i>=1;i--) // outer loop
+{
+for(int k=0;k<5-i;k++)
+{
+System.out.print(" ");
+}
+for(int j=1;j<=i;j++) // inner loop
+{
+System.out.print(i+" ");
+}
+System.out.println();
+}
+}
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+// take 10 nos from user , store them in an array and display odd digits
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int num[] = new int[10];
+	    
+	    for(int i=0;i<10;i++){
+	        System.out.println("enter 10 numbers :");
+	        num[i] = sc.nextInt();
+	        
+	    }
+	    
+	    for(int i=0;i<10;i++)
+	    {
+	        if(num[i]%2==0)
+	        {
+	            System.out.println(num[i]+ " is even ");
+	        }
+	        
+	        else
+	        {
+	            System.out.println(num[i]+ " is odd");	            
+	        }
+	    }
+	    
+
+}
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+// max of elements of an array
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int nums[] = new int[5];
+	    
+	    for(int i=0;i<5;i++)
+	    {
+	        System.out.println("enter numbers");
+	        nums[i]= sc.nextInt();
+	    }
+	    int max =nums[0];
+	    for(int i=1;i<5;i++)
+	    {
+	        if(max<nums[i])
+	        {
+	            max=nums[i];
+	            
+	        }
+	    }
+	    
+	    System.out.println("max number in array is :"+max);
+
+
+}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//// min of elements in an array
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int nums[] = new int[5];
+	    
+	    for(int i=0;i<5;i++)
+	    {
+	        System.out.println("enter numbers");
+	        nums[i]= sc.nextInt();
+	    }
+	    int min =nums[0];
+	    for(int i=1;i<5;i++)
+	    {
+	        if(min>nums[i])
+	        {
+	            min=nums[i];
+	            
+	        }
+	    }
+	    
+	    System.out.println("min number in array is :"+min);
+
+
+}
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+////// sort in descending order
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int nums[] = new int[5];
+	    
+	    for(int i=0;i<5;i++)
+	    {
+	        System.out.println("enter 5 numbers :");
+	        nums[i] = sc.nextInt();
+	    }
+	    
+	    int temp=0;
+	    
+	    for(int i=0;i<5;i++)
+	    {
+	        for(int j=i+1;j<5;j++)
+	        {
+	            if(nums[i]<=nums[j])
+	            {
+	                temp=nums[i];
+	                nums[i]=nums[j];
+	                nums[j]=temp;
+	                
+	            }
+	        }
+	        
+	    }
+	    
+	    System.out.println("descending ordered array :");
+	    for(int k:nums)
+	    {
+	        System.out.print(k+" ");
+	    }
+
+
+
+}
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+14. // sort in ascending order
+////// sort in descending order
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int nums[] = new int[5];
+	    
+	    for(int i=0;i<5;i++)
+	    {
+	        System.out.println("enter 5 numbers :");
+	        nums[i] = sc.nextInt();
+	    }
+	    
+	    int temp=0;
+	    
+	    for(int i=0;i<5;i++)
+	    {
+	        for(int j=i+1;j<5;j++)
+	        {
+	            if(nums[i]>=nums[j])
+	            {
+	                temp=nums[i];
+	                nums[i]=nums[j];
+	                nums[j]=temp;
+	                
+	            }
+	        }
+	        
+	    }
+	    
+	    System.out.println("ascending ordered array :");
+	    for(int k:nums)
+	    {
+	        System.out.print(k+" ");
+	    }
+
+
+
+}
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+15. // display prime nos from an array
+
+////// // display prime nos from an array
+
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Scanner sc = new Scanner(System.in);
+	    int nums[] = new int[5];
+	    
+	    for(int i=0;i<5;i++)
+	    {
+	        System.out.println("enter 5 numbers :");
+	        nums[i] = sc.nextInt();
+	    }
+	    
+	    
+	    
+	    for(int i=0;i<5;i++){
+	    int temp=0;
+	    
+	     for(int k=2;k<=nums[i]/2;k++)
+	     {
+	         if(nums[i]%k==0)
+	         {
+	             temp=1;
+	             break;
+	         }
+	          
+	   
+	         
+	     }
+	     if(temp==0 && nums[i]>1)
+	      {
+	        System.out.println(nums[i]+ "is a prime number");
+	    }
+	   
+	        
+	    }
+	    
+	  
+
+
+}
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+// design a class Prime with a method Primecheck() and create another class called
+//Primedemo and call the Primecheck() method
+import java.util.*;
+
+
+	    class prime
+	    {
+	        int n;
+	        
+	        public void input(int k)
+	        {
+	           n=k ;
+	        }
+	        
+	        public void primecheck()
+	        {
+	            int temp=0;
+	            
+	            for(int i=2;i<n/2;i++)
+	            {
+	                if(n%i==0)
+	                {
+	                    temp=1;
+	                }
+	                
+	                else{
+	                    temp=0;
+	                }
+	            }
+	            if(temp==0)
+	            {
+	                System.out.println("number is prime");
+	                
+	            }
+	            else
+	            {
+	                System.out.println("number is not prime");
+	            }
+	        }
+	    }
+	    
+
+
+
+public class Main
+{
+	public static void main(String[] args) {	 
+	    
+	    prime p = new prime();
+	    p.input(5);
+	    p.primecheck();
+	  
+
+
+}
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+17. // product of prime digits in a no
+import java.util.*;
+class primedigits
+{
+int n,p; // data member
+public void input(int k) // 1st member function
+{
+n=k;
+}
+public int primecheck(int n) // 2nd member function
+{
+int p=1;
+for(int i=2;i<n;i++)
+{
+if(n%i==0)
+{
+p=0;
+break;
+}
+}
+if (p==1)
+{
+return n;
+}
+else
+{
+return 1;
+}
+}
+public void product()
+{
+int r,k;
+p=1;
+while(n>0)
+{
+r=n%10;
+k=primecheck(r);
+p=p*k;
+n=n/10;
+}
+}
+public void display()
+{
+System.out.println(p);
+}
+}
+public class Main
+{
+public static void main(String[]ags){
+primedigits prime_prod = new primedigits();
+prime_prod.input(5);
+prime_prod.product();
+prime_prod.display();
+}
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+// write a code for addition of 2 numbers uing class and object 
+import java.util.*;
+
+
+class addition
+{
+    int a,b,c;
+    
+    public void input(int x, int y)
+    {
+        a=x;
+        b=y;
+    }
+    
+    public void add()
+    {
+        c=a+b;
+    }
+    
+    public void display()
+    {
+        System.out.println(a+"+"+ b+"="+ c);
+    }
+}
+
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    addition ans = new addition();
+	    ans.input(3,4);
+	    ans.add();
+	    ans.display();
+	   
+
+
+}
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+19. // electricity bill using class and objects
+import java.util.*;
+class Electbill
+{
+long cno;
+String cname;
+String cadd;
+long NOU;
+Electbill(long a,String b,String c,long d) // parameterized constructor
+{
+cno=a;
+cname=b;
+cadd=c;
+NOU=d;
+}
+void display() // displays consumer's details
+{
+System.out.println("Consumer number:"+cno+","+" Consumer name: "+cname+","+"
+Consumer address: "+cadd+","+" Number of units consumed:"+NOU);
+}
+void calculate() // calculates the monthly bill
+{
+int rent=500;
+double rate=0;
+if (NOU > 0 && NOU <=100)
+{
+rate = rent;
+}
+else if (NOU > 100 && NOU <= 200)
+{
+rate=rent+(NOU-100)*1;
+}
+else if (NOU > 200 && NOU <= 300)
+{
+rate=rent+100*1+(NOU-200)*1.20;
+}
+else if (NOU > 300)
+{
+rate=rent+(100*1)+(100*1.20)+(NOU-300)*1.50;
+}
+System.out.println("The total amount to be paid is Rs. "+rate);
+}
+}
+public class Main
+{
+public static void main(String[] args) {
+Scanner s = new Scanner(System.in);
+System.out.println("Enter consumer number");
+long e1=s.nextInt();
+s.nextLine();
+System.out.println("Enter consumer name");
+String e2=s.nextLine();
+System.out.println("Enter consumer address");
+String e3=s.nextLine();
+System.out.println("Enter no. of units consumed");
+long e4=s.nextInt();
+Electbill e=new Electbill(e1,e2,e3,e4);
+e.display();
+e.calculate();
+}
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+// sum of factorials of digits of a number using Class and object
+
+import java.util.*;
+
+class sumFact
+{
+    int n,sum=0;
+    
+    sumFact(int x)
+    {
+        n=x;
+    }
+    
+    int fact(int z)
+    {
+        int f=1;
+        for(int i=1;i<=z;i++)
+        {
+            f=f*i;
+        }
+        
+        return f;
+        
+    }
+    
+    void call()
+    {
+        while(n>0)
+        {
+            int r=n%10;
+            sum=sum+fact(r);
+            n=n/10;
+            
+        }
+    }
+    
+    void display()
+    {
+        System.out.println("output :"+sum);
+    }
+}
+
+
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    System.out.println("enter a number :");
+	    int num = sc.nextInt();
+	    
+	    sumFact q = new sumFact(num);
+	    q.call();
+	    q.display();
+	    
+	 
+	  
+
+}
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+ // find area of a rectangle
+// constructor overloading
+
+import java.util.*;
+
+class rectDemo
+{
+    int l,b, area;
+    
+    rectDemo()
+    {
+        l=1;
+        b=1;
+        
+    }
+    
+    rectDemo(int x, int y)
+    {
+        l=x;
+        b=y;
+    }
+    
+    rectDemo(int a)
+    {
+        l=a;
+        b=a;
+    }
+    
+    void area()
+    {
+        area=l*b;
+        
+    }
+    
+    void display()
+    {
+        System.out.println("area of rectangle is :" + area);
+    }
+}
+
+
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Scanner sc = new Scanner(System.in);
+	    
+	    System.out.println("enter length :");
+	    int q = sc.nextInt();
+	    
+	    System.out.println("enter breadth :");
+	    int w = sc.nextInt();
+	    
+	    rectDemo r1 = new rectDemo();
+	    rectDemo r2 = new rectDemo(q,w);
+	    rectDemo r3 = new rectDemo(q);
+	    
+	    r1.area();
+	    r2.area();
+	    r3.area();
+	    
+	    r1.display();
+	    r2.display();
+	    r3.display();
+	    
+	
+	 
+	  
+
+}
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+ // method overloading
+import java.util.*;
+class overload
+{
+void area(int l,int b)
+{
+int a =l*b;
+System.out.println("Area of rectangle:"+a);
+}
+void area(int r)
+{
+double a=3.14*r*r;
+System.out.println("Area of circle:"+a);
+}
+}
+public class Main
+{
+public static void main(String[] args) {
+Scanner s = new Scanner(System.in);
+System.out.println("Enter the length");
+int a=s.nextInt();
+System.out.println("Enter the breadth");
+int b=s.nextInt();
+System.out.println("Enter the radius");
+int r=s.nextInt();
+overload r1= new overload();
+r1.area(a,b);
+overload r2= new overload();
+r2.area(r);
+}
+}
+23. // class Travel
+import java.util.*;
+class Travel
+{
+long TravelCode;
+String Place;
+int No_of_travelers;
+int No_of_buses;
+Travel() // Default constructor
+{
+TravelCode=201;
+Place="Nainital";
+No_of_travelers=10;
+No_of_buses=1;
+}
+Travel(int a,String b,int c,int d) // Parameterized constructor
+{
+TravelCode=a;
+Place=b;
+No_of_travelers=c;
+No_of_buses=d;
+}
+void ShowTravel()
+{
+System.out.println("Travel code: "+TravelCode+", "+"Place: "+Place+", "+"No. of travelers:
+"+No_of_travelers+", "+"No. of buses: "+No_of_buses);
+}
+}
+public class Main
+{
+public static void main(String[] args) {
+Scanner s = new Scanner(System.in);
+System.out.println("Enter 0 for default details or enter 1 to enter new details");
+int code=s.nextInt();
+s.nextLine();
+if (code == 0)
+{
+Travel t2=new Travel();
+t2.ShowTravel();
+}
+else if (code==1)
+{
+System.out.println("Enter the travel code");
+int e1=s.nextInt();
+s.nextLine();
+System.out.println("Enter the Place");
+String e2=s.nextLine();
+System.out.println("Enter the no of travelers");
+int e3=s.nextInt();
+s.nextLine();
+int e4=0;
+if (e3<20)
+{
+e4=1;
+}
+else if (e3>=20 && e3<40)
+{
+e4=2;
+}
+else if (e3>=40)
+{
+e4=3;
+}
+Travel t1=new Travel(e1,e2,e3,e4);
+t1.ShowTravel();
+}
+}
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+ // inheritance to add 3 numbers 
+
+import java.util.*;
+
+
+class A
+{
+    int a;
+    A(int x)
+    {
+        a=x;
+    }
+    
+    
+}
+
+class B extends A
+{
+    int b;
+    B(int x, int y)
+    {
+        super(x);
+        b=y;
+    }
+    
+    
+    
+}
+
+
+class C extends B
+{
+    int c;
+    C(int x, int y, int z){
+        super(x,y);
+        c=z;
+        
+    }
+    void greatest()
+{
+if(a==b && b==c)
+{
+System.out.println("All equal");
+}
+else if (a<b && b>c)
+{
+System.out.println(b+" is the greatest of the 3");
+}
+else if (a>b && a>c)
+{
+System.out.println(a+" is the greatest of the 3");
+}
+else
+{
+System.out.println(c+" is the greatest of the 3");
+}
+}
+
+    
+}
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    C obj = new C(1,2,3);
+	    obj.greatest();
+	    	  
+
+}
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------
+25. // to inherit a private variable, we create a function of that class
+class A{
+private int a;
+A(int x)
+{
+a=x;
+}
+int getA()
+{
+return a;
+}
+}
+class B extends A{
+int b;
+B(int x,int y)
+{
+super(x);
+b=y;
+}
+void sum()
+{
+int k=getA()+b;
+System.out.println("sum is "+k);
+}
+}
+public class practical27Sep {
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+B add=new B(4,4);
+add.sum();
+}
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+26. 30/09/23
+// write oop in java to design class “Numbers” with private data ,members to read from
+user.design a class “Square” inherited from “Numbers” to calculate the square of that
+number.design another class “Cube” inherited from “Numbers” to calculate cube of the
+number.
+import java.util.*;
+class Number{
+private int number;
+Number(int k){
+number=k;
+}
+int getN(){
+return number;
+}
+}
+class Square extends Number{
+Square(int n){
+super(n);
+}
+void sqr(){
+int a=getN();
+int s=a*a;
+System.out.println("Square of the number is:"+s);
+}
+}
+class Cube extends Number{
+Cube(int num){
+super(num);
+}
+void cb(){
+int c=getN();
+int cu=c*c*c;
+System.out.println("Cube of the number is:"+cu);
+}
+}
+public class Main
+{
+public static void main(String[] args) {
+System.out.println("Enter the number to calculate square and cube");
+Scanner sc=new Scanner(System.in);
+int num1=sc.nextInt();
+Square s= new Square(num1);
+s.sqr();
+Cube c= new Cube(num1);
+c.cb();
+}
+}
+
+----------------------------------------------------------------
+
+
+27. // method overloading is possible as signatures of all the functions are different
+import java.util.*;
+class Sample
+{
+void area(int l,int b)
+{
+System.out.println("Area of rectangle "+l*b);
+}
+void area(int r)
+{
+double a=3.14*r*r;
+System.out.println("Area of Circle "+a);
+}
+double area(double s)
+{
+return s*s;
+}
+}
+public class Main
+{
+public static void main(String[] args) {
+Sample s1=new Sample();
+s1.area(3,4);
+s1.area(2);
+System.out.println("Area of square "+s1.area(1.0));
+}
+}
+
+---------------------------------------------------------------------------------------
+
+28. // method overriding
+import java.util.*;
+class shape
+{
+int dim1;
+int dim2;
+void area(int l,int b)
+{
+dim1=0;
+dim2=0;
+}
+void area()
+{
+System.out.println("Undefined shape");
+}
+}
+class rectangle extends shape
+{
+rectangle(int a,int b)
+{
+dim1=a;
+dim2=b;
+}
+void area()
+{
+System.out.println("Rectangle area "+dim1*dim2);
+}
+}
+public class Main
+{
+public static void main(String[] args) {
+shape s=new shape();
+rectangle r=new rectangle(5,4);
+r.area();
+shape s1;
+s1=s;
+s1.area();
+s1=r;
+s1.area();
+}
+}
+
+
+-------------------------------------------------------------------------------------------
+
+Eg :abstract class shape
+{
+shape()
+{
+System.out.println("Inside shape class constructor");
+}
+abstract void area();
+void display()
+{
+System.out.println("Inside shape class");
+}
+}
+class rectangle extends shape
+{
+int l,b;
+rectangle(int x, int y)
+{
+l=x;
+b=y;
+}
+void area()
+{
+System.out.println("Area of rectangle "+l*b);
+}
+void display()
+{
+System.out.println("Inside child display");
+}
+}
+public class kkk {
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+shape s=new rectangle (2,5); // can access methods which are not common
+between shape and rectangle
+// object is created of rectangle class and reference of rectangle is stored in s
+s.display();
+s.area();
+//s.display2(); // s cannot be used to access methods of child class
+}
+}
+
+------------------------------------------------------------------------------------------------------
+
+
+30. // we have to calculate percentage of marks obtained in 3 sub(each out of 100) by
+student A and in 4 sub(each out of 100) by student B.create an abstract class ‘Marks’
+with abstract method ‘getPercentage).it is inherited by 2 other classes A and B each
+having method with same name which returns percentage of student.The constructor of
+student A takes the mks in 3 sub as parameters and marks of 4 sub as parameters for
+student B.create object for each 2 classes and print percentage of mks for both the
+students.
+?? change return type to double
+import java.util.Scanner;
+abstract class Marks
+{
+abstract void getPercentage();
+}
+class A extends Marks
+{
+float s1,s2,s3;
+A(float x, float y,float z)
+{
+s1=x;
+s2=y;
+s3=z;
+}
+void getPercentage()
+{
+System.out.println("Percentage "+(s1+s2+s3)/(double)3);
+}
+}
+class B extends Marks
+{
+float s1,s2,s3,s4;
+B(float x, float y,float z,float a)
+{
+s1=x;
+s2=y;
+s3=z;
+s4=a;
+}
+void getPercentage()
+{
+System.out.println("Percentage "+(s1+s2+s3+s4)/(double)4);
+}
+}
+public class kkk {
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+System.out.println("enter marks scored by student A in Sub 1");
+int A_sub1=sc.nextInt();
+System.out.println("enter marks scored by student A in Sub 2");
+int A_sub2=sc.nextInt();
+System.out.println("enter marks scored by student A in Sub 3");
+int A_sub3=sc.nextInt();
+System.out.println("enter marks scored by student B in Sub 1");
+int B_sub1=sc.nextInt();
+System.out.println("enter marks scored by student B in Sub 2");
+int B_sub2=sc.nextInt();
+System.out.println("enter marks scored by student B in Sub 3");
+int B_sub3=sc.nextInt();
+System.out.println("enter marks scored by student B in Sub 4");
+int B_sub4=sc.nextInt();
+Marks m1=new A(A_sub1,A_sub2,A_sub3);
+Marks m2=new B(B_sub1,B_sub2,B_sub3,B_sub4);
+m1.getPercentage();
+m2.getPercentage();
+}
+}
